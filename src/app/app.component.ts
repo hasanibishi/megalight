@@ -8,6 +8,30 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
 
+  // VARIABLES
+  SelectedMenu = 1;
+  MenuList: any[] = [{
+    ID: 1,
+    Name: '/home',
+    Icon: 'fa fa-home',
+    TranslatedName: 'Home'
+  }, {
+    ID: 2,
+    Name: '/gallery',
+    Icon: 'fa fa-image',
+    TranslatedName: 'Gallery'
+  }, {
+    ID: 3,
+    Name: '/catalogue',
+    Icon: 'fa fa-book',
+    TranslatedName: 'Catalogue'
+  }, {
+    ID: 4,
+    Name: '/contact',
+    Icon: 'fa fa-phone',
+    TranslatedName: 'Contact'
+  }];
+
   constructor(private translate: TranslateService) {
     // this language will be used as a fallback when a translation isn't found in the current language
     this.translate.setDefaultLang('al');

@@ -17,17 +17,10 @@
             </a>
         </div>
         <div class="links">
-            <a [routerLink]="['/home']">
-                <span [translate]="'Home'"></span>
-            </a>
-            <a [routerLink]="['/gallery']">
-                <span [translate]="'Gallery'"></span>
-            </a>
-            <a [routerLink]="['/catalogue']">
-                <span [translate]="'Catalogue'"></span>
-            </a>
-            <a [routerLink]="['/contact']">
-                <span [translate]="'Contact'"></span>
+            <a *ngFor="let item of MenuList" [routerLink]="item.Name" (click)="SelectedMenu = item.ID"
+                [ngClass]="{selectedMenu: SelectedMenu === item.ID}">
+                <i [class]="item.Icon"></i>
+                <span class="ml-3" [translate]="item.TranslatedName"></span>
             </a>
         </div>
         <!-- <div class="hamburger">
