@@ -8,15 +8,14 @@ import { ContactComponent } from './_components/contact/contact.component';
 
 const routes: Routes = [{
   path: 'home', component: HomeComponent
-},
-{
+}, {
   path: 'gallery', component: GalleryComponent
-},
-{
+}, {
   path: 'catalogue', component: CatalogueComponent
-},
-{
-  path: 'contact', component: ContactComponent
+}, {
+  path: 'contact', component: ContactComponent,
+}, {
+  path: '', redirectTo: 'home', pathMatch: 'full'
 }];
 
 @NgModule({

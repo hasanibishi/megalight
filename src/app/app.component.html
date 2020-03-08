@@ -1,8 +1,38 @@
-<div>
-    <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
-    <a [routerLink]="['/gallery']" routerLinkActive="router-link-active">Gallery</a>
-    <a [routerLink]="['/catalogue']" routerLinkActive="router-link-active">Catalogue</a>
-    <a [routerLink]="['/contact']" routerLinkActive="router-link-active">Contact</a>
+<div class="header-style">
+    <div class="language">
+        <span (click)="changeLanguage('al')">
+            <img src="./assets/images/al.png" alt="">
+        </span>
+        <span (click)="changeLanguage('mk')">
+            <img src="./assets/images/mk.png" alt="">
+        </span>
+        <span (click)="changeLanguage('en')">
+            <img src="./assets/images/en.png" alt="">
+        </span>
+    </div>
+    <div class="navigation">
+        <div class="logo">
+            <a [routerLink]="['/home']">
+                <img src="./assets/images/logo.jpg">
+            </a>
+        </div>
+        <div class="links">
+            <a [routerLink]="['/home']">
+                <span [translate]="'Home'"></span>
+            </a>
+            <a [routerLink]="['/gallery']">
+                <span [translate]="'Gallery'"></span>
+            </a>
+            <a [routerLink]="['/catalogue']">
+                <span [translate]="'Catalogue'"></span>
+            </a>
+            <a [routerLink]="['/contact']">
+                <span [translate]="'Contact'"></span>
+            </a>
+        </div>
+        <!-- <div class="hamburger">
+        <i class="fa fa-bars fa-2x"></i>
+    </div> -->
+    </div>
 </div>
-
 <router-outlet></router-outlet>

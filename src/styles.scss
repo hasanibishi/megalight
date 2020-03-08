@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+// LAYOUT
+
+.header-style {
+  .language {
+    text-align: right;
+    margin-right: 100px;
+    span {
+      margin: 5px;
+      cursor: pointer;
+    }
+    img {
+      border-radius: 5px;
+    }
+  }
+
+  .navigation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+
+    .logo {
+      img {
+        width: 200px;
+      }
+    }
+
+    //   @media screen and (max-width: 479px) {
+    //     .links {
+    //       display: none !important;
+    //     }
+    //   }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center;
+      width: 100%;
+      // background: linear-gradient(to left, #a0a59c, #fff);
+
+      a {
+        color: #83c15b;
+        text-decoration: none;
+        font-size: 25px;
+        padding: 14px 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      a:hover {
+        color: #fff;
+        background: #83c15b;
+        transition: all 0.5s;
+        width: 100%;
+        text-align: center;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+      }
+    }
+  }
+}
