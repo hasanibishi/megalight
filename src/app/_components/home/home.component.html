@@ -1,1 +1,7 @@
-<p>home works!</p>
+<swiper class="swiper-container" [config]="swiperConfig">
+	<div *ngFor="let slide of imagesSlide" class="swiper-slide">
+		<div>
+			<img [src]="slide" width="100%">
+		</div>
+	</div>
+</swiper>

@@ -11,6 +11,7 @@ import { GalleryComponent } from './_components/gallery/gallery.component';
 import { CatalogueComponent } from './_components/catalogue/catalogue.component';
 import { ContactComponent } from './_components/contact/contact.component';
 
+import { SwiperModule } from 'ngx-swiper-wrapper';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -28,6 +29,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    SwiperModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -7,7 +7,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
   // VARIABLES
   SelectedMenu = 1;
   MenuList: any[] = [{
