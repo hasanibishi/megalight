@@ -1,7 +1,18 @@
-<swiper class="swiper-container" [config]="swiperConfig">
-	<div *ngFor="let slide of imagesSlide" class="swiper-slide">
-		<div>
-			<img [src]="slide" width="100%">
+<div class="Home-Container">
+	<swiper class="swiper" [config]="swiperConfig">
+		<div *ngFor="let slide of imagesSlide">
+			<div>
+				<img [src]="slide">
+			</div>
 		</div>
+	</swiper>
+
+
+	<div class="textAndVideo">
+		<div>
+			<span [translate]="'HomeText'"></span>
+		</div>
+
+		<iframe src="https://www.youtube.com/embed/0NuYMJIYttU"></iframe>
 	</div>
-</swiper>
+</div>
