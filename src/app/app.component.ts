@@ -8,6 +8,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   // VARIABLES
+  DatetimeNow: Date = new Date();
+  Year: number;
+
   SelectedMenu = 1;
   MenuList: any[] = [{
     ID: 1,
@@ -38,6 +41,8 @@ export class AppComponent {
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     const language: string = localStorage.getItem('language');
     this.translate.use(language);
+
+    this.Year = this.DatetimeNow.getFullYear();
   }
 
   changeLanguage(language: string) {

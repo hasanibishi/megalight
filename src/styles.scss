@@ -91,25 +91,24 @@ footer {
   height: 200px;
 
   .menuAndContacts {
-    .openingHours {
-      color: #fff;
-      font-size: 18px;
-    }
-    .leftData {
-      background-color: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      left: 200px;
-      top: 1130px;
-      width: 400px;
-      height: 200px;
-      z-index: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    height: 88%;
+
+    .openingHoursAndLinks {
+      justify-self: center;
+
+      .openingHours {
+        color: #fff;
+        font-size: 18px;
+      }
 
       .links {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
         align-items: end;
-        padding: 60px 80px 10px;
+        padding: 40px 80px 10px;
 
         a {
           background: rgba(0, 0, 0, 0.5);
@@ -117,18 +116,18 @@ footer {
           color: #fff;
         }
         .fb {
-          padding: 10px 17px;
+          padding: 10px 18px;
         }
 
         .in {
-          padding: 10px 12px;
+          padding: 10px 14px;
+        }
+
+        .youtube {
+          padding: 10px;
         }
       }
     }
-
-    display: grid;
-    grid-template-columns: 2fr repeat(2, 1fr);
-    height: 100%;
 
     .menu {
       display: grid;

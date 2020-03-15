@@ -3,15 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HomeComponent } from './_components/home/home.component';
-import { GalleryComponent } from './_components/gallery/gallery.component';
-import { CatalogueComponent } from './_components/catalogue/catalogue.component';
-import { ContactComponent } from './_components/contact/contact.component';
+import { LoaderService } from './_services/loader.service';
+import { LoaderInterceptorService } from './_services/loader-interceptor.service';
+import { LoaderComponentComponent } from './_components/shared/loader-component/loader-component.component';
 
 import { SwiperModule } from 'ngx-swiper-wrapper';
+import { HomeComponent } from './_components/dashboard/home/home.component';
+import { GalleryComponent } from './_components/dashboard/gallery/gallery.component';
+import { CatalogueComponent } from './_components/dashboard/catalogue/catalogue.component';
+import { ContactComponent } from './_components/dashboard/contact/contact.component';
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -23,7 +27,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent,
     GalleryComponent,
     CatalogueComponent,
-    ContactComponent
+    ContactComponent,
+    LoaderComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,14 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [],
+  providers: [
+    LoaderService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

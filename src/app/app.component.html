@@ -1,3 +1,4 @@
+
 <div class="header-style">
     <div class="language">
         <span (click)="changeLanguage('al')">
@@ -29,31 +30,28 @@
     </div>
 </div>
 
+<app-loader></app-loader>
 <router-outlet></router-outlet>
 
 <footer>
-
     <div class="menuAndContacts">
-
-        <div class="leftData">
+        <div class="openingHoursAndLinks">
             <div class="openingHours pl-3 pt-3">
                 <span [translate]="'OpeningHours'"></span>: <br>
                 <span [translate]="'FromMonToSat'"></span>
             </div>
             <div class="links">
                 <a class="fb" href="https://www.facebook.com/megalights2" target="_blank">
-                    <i class="fa fa-facebook-f fa-2x"></i>
+                    <i class="fab fa-facebook-f fa-2x"></i>
                 </a>
                 <a class="in" href="https://www.instagram.com/megalights1" target="_blank">
-                    <i class="fa fa-instagram fa-2x"></i>
+                    <i class="fab fa-instagram fa-2x"></i>
                 </a>
-                <a class="in" href="https://www.youtube.com/watch?v=0NuYMJIYttU" target="_blank">
-                    <i class="fa fa-youtube fa-2x"></i>
+                <a class="youtube" href="https://www.youtube.com/watch?v=0NuYMJIYttU" target="_blank">
+                    <i class="fab fa-youtube fa-2x"></i>
                 </a>
             </div>
         </div>
-
-        <div></div>
 
         <div class="menu">
             <a *ngFor="let item of MenuList" [routerLink]="item.Name" (click)="SelectedMenu = item.ID"
@@ -79,4 +77,9 @@
             </div>
         </div>
     </div>
+
+    <div class="text-center text-white">
+        <span>Copyright &copy; {{Year}} <b>Megalight</b>. All rights reserved.</span>
+    </div>
 </footer>
+
