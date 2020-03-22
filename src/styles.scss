@@ -38,18 +38,11 @@ $firstColor: #83c15b;
       }
     }
 
-    // @media screen and (max-width: 600px) {
-    //   .links {
-    //     display: none !important;
-    //   }
-    // }
-
     .links {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       justify-items: center;
       width: 100%;
-      // background: linear-gradient(to left, #a0a59c, #fff);
 
       a {
         color: $firstColor;
@@ -111,7 +104,7 @@ footer {
         padding: 40px 80px 10px;
 
         a {
-          background: rgba(0, 0, 0, 0.5);
+          background: rgba($color: #000, $alpha: 0.5);
           border-radius: 50px;
           color: #fff;
         }
@@ -166,9 +159,13 @@ footer {
     }
   }
   .textAndVideo {
-    margin: 100px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border: solid 1px $firstColor;
+    border-radius: 12px;
+    background: rgba($color: #83c15b, $alpha: 0.1);
+    padding: 10px;
+    margin: 100px;
     grid-gap: 100px;
 
     span {
@@ -179,5 +176,105 @@ footer {
       width: 100%;
       height: 300px;
     }
+  }
+}
+
+// MOBILE DEVICE
+@media (min-width: 320px) and (max-width: 480px) {
+  .header-style {
+    display: none;
+  }
+
+  .header-styleMobile {
+    margin: 0 !important;
+
+    .language {
+      text-align: right;
+      margin: 0 !important;
+      padding-right: 20px;
+
+      span {
+        margin: 5px;
+        cursor: pointer;
+      }
+      img {
+        border-radius: 5px;
+      }
+    }
+
+    .navigation {
+      display: grid;
+      grid-template-columns: 1fr 1fr !important;
+      justify-items: center;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .logo {
+        img {
+          width: 150px;
+        }
+      }
+
+      .hamburger {
+        display: block !important;
+        justify-self: end;
+        margin-right: 20px;
+
+        i {
+          color: $firstColor;
+        }
+      }
+    }
+    .links {
+      display: grid;
+      padding-left: 30px;
+
+      a {
+        display: grid;
+        grid-template-columns: 25px auto;
+        align-items: center;
+        justify-items: center;
+        color: $firstColor !important;
+        text-decoration: none;
+        font-size: 16px !important;
+
+        span {
+          justify-self: start !important;
+        }
+
+        hr {
+          width: 100%;
+          grid-column: 1 / span 2;
+        }
+      }
+    }
+  }
+
+  footer {
+    .menu,
+    .contacts {
+      display: none !important;
+    }
+
+    .menuAndContacts {
+      grid-template-columns: 1fr !important;
+
+      .openingHours {
+        padding-left: 0 !important;
+      }
+    }
+  }
+
+  .Home-Container {
+    .textAndVideo {
+      grid-template-columns: 1fr !important;
+      margin: 20px 10px;
+    }
+  }
+}
+
+@media (min-width: 481px) {
+  .header-styleMobile {
+    display: none !important;
   }
 }

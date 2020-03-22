@@ -1,3 +1,4 @@
+<app-loader></app-loader>
 
 <div class="header-style">
     <div class="language">
@@ -24,13 +25,42 @@
                 <span class="ml-3" [translate]="item.TranslatedName"></span>
             </a>
         </div>
-        <!-- <div class="hamburger">
-        <i class="fa fa-bars fa-2x"></i>
-    </div> -->
     </div>
 </div>
 
-<app-loader></app-loader>
+<!-- NAVIGATION MOBILE -->
+<div class="header-styleMobile">
+    <div class="language">
+        <span (click)="changeLanguage('al')">
+            <img src="./assets/images/al.png" alt="">
+        </span>
+        <span (click)="changeLanguage('mk')">
+            <img src="./assets/images/mk.png" alt="">
+        </span>
+        <span (click)="changeLanguage('en')">
+            <img src="./assets/images/en.png" alt="">
+        </span>
+    </div>
+    <div class="navigation">
+        <div class="logo">
+            <a [routerLink]="['/home']">
+                <img src="./assets/images/logo.jpg">
+            </a>
+        </div>
+        <div class="hamburger" (click)="toggleMenu()">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>
+    </div>
+
+    <div class="links" *ngIf="showMenu">
+        <a *ngFor="let item of MenuList" [routerLink]="item.Name" (click)="showMenu = false">
+            <i [class]="item.Icon"></i>
+            <span class="ml-3" [translate]="item.TranslatedName"></span>
+            <hr>
+        </a>
+    </div>
+</div>
+
 <router-outlet></router-outlet>
 
 <footer>
@@ -71,9 +101,9 @@
                 <span translate="Tel"></span>:
                 <span>044 521 626</span> <br>
                 <span translate="Mob"></span>:
-                <span>+ 389 71 665 006</span> <br>
+                <span>+389 71 665 006</span> <br>
                 <span translate="Mob"></span>:
-                <span>+ 389 70 729 536</span> <br>
+                <span>+389 70 729 536</span> <br>
             </div>
         </div>
     </div>
@@ -82,4 +112,3 @@
         <span>Copyright &copy; {{Year}} <b>Megalight</b>. All rights reserved.</span>
     </div>
 </footer>
-
