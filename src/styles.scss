@@ -11,8 +11,6 @@ $firstColor: #83c15b;
 
 // LAYOUT
 .header-style {
-  margin: 0 100px 20px 100px;
-
   .language {
     text-align: right;
     margin-right: 100px;
@@ -28,7 +26,7 @@ $firstColor: #83c15b;
 
   .navigation {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, auto);
     justify-items: center;
     align-items: center;
 
@@ -164,7 +162,7 @@ footer {
     border: solid 1px $firstColor;
     border-radius: 12px;
     background: rgba($color: #83c15b, $alpha: 0.1);
-    padding: 10px;
+    padding: 50px;
     margin: 100px;
     grid-gap: 100px;
 
@@ -179,8 +177,8 @@ footer {
   }
 }
 
-// MOBILE DEVICE
-@media (min-width: 320px) and (max-width: 480px) {
+// MEDIA QUERIES
+@media (min-width: 320px) and (max-width: 1023px) {
   .header-style {
     display: none;
   }
@@ -207,7 +205,7 @@ footer {
       grid-template-columns: 1fr 1fr !important;
       justify-items: center;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
 
       .logo {
         img {
@@ -269,12 +267,17 @@ footer {
     .textAndVideo {
       grid-template-columns: 1fr !important;
       margin: 20px 10px;
+      padding: 10px !important;
     }
   }
 }
 
-@media (min-width: 481px) {
+@media (min-width: 1024px) {
   .header-styleMobile {
     display: none !important;
+  }
+
+  .navigation {
+    margin-bottom: 20px;
   }
 }

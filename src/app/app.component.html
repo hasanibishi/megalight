@@ -18,6 +18,7 @@
                 <img src="./assets/images/logo.jpg">
             </a>
         </div>
+        <div></div>
         <div class="links">
             <a *ngFor="let item of MenuList" [routerLink]="item.Name" (click)="SelectedMenu = item.ID"
                 [ngClass]="{selectedMenu: SelectedMenu === item.ID}">
