@@ -1,1 +1,28 @@
-<p>contact works!</p>
+<div class="Contact-Container">
+    <div>
+        <h3><span class="text-bold" translate="Location"></span></h3>
+        <div class="map">
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+        </div>
+    </div>
+    <div class="contacts">
+        <h5 class="mb-0 mt-5"><span [translate]="'Email'"></span>:</h5>
+        <div class="mb-4">
+            <a href="mailto:mega_lights@hotmail.com">mega_lights@hotmail.com</a>
+        </div>
+        <h5 class="mb-0"><span [translate]="'Address'"></span>:</h5>
+        <div class="mb-4">
+            <span translate="AddressData"></span>
+        </div>
+        <div>
+            <span translate="Tel"></span>:
+            <span>044 521 626</span> <br>
+            <span translate="Mob"></span>:
+            <span>+389 71 665 006</span> <br>
+            <span translate="Mob"></span>:
+            <span>+389 70 729 536</span>
+        </div>
+    </div>
+</div>

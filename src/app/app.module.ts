@@ -15,6 +15,7 @@ import { HomeComponent } from './_components/dashboard/home/home.component';
 import { GalleryComponent } from './_components/dashboard/gallery/gallery.component';
 import { CatalogueComponent } from './_components/dashboard/catalogue/catalogue.component';
 import { ContactComponent } from './_components/dashboard/contact/contact.component';
+import { AgmCoreModule } from '@agm/core';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -35,6 +36,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     SwiperModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBch_SUwBDehZUf0evVAYho33FoId369YE'
+    }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
