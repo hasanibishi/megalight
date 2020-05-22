@@ -13,6 +13,7 @@ export class AppComponent {
   showMenu = false;
 
   SelectedMenu = 1;
+
   MenuList: any[] = [{
     ID: 1,
     Name: '/home',
