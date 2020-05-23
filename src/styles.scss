@@ -198,7 +198,32 @@ footer {
 }
 
 .Catalogue-Container {
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  justify-content: center;
+  border: solid 1px $firstColor;
+  border-radius: 12px;
+  background: rgba($color: #83c15b, $alpha: 0.1);
+  padding: 50px;
+  margin: 50px 100px 100px;
+  grid-gap: 100px;
+
+  .catalog {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+
+    img {
+      height: 100px;
+      width: 300px;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.08);
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 // MEDIA QUERIES

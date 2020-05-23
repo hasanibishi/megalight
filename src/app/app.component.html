@@ -66,6 +66,7 @@
 
 <router-outlet></router-outlet>
 
+<!-- FOOTER -->
 <footer>
     <div class="menuAndContacts">
         <div class="openingHoursAndLinks">
@@ -87,7 +88,7 @@
         </div>
 
         <div class="menu">
-            <a *ngFor="let item of MenuList" [routerLink]="item.Name" (click)="SelectedMenu = item.ID"
+            <a *ngFor="let item of MenuList" [routerLink]="item.Name" (click)="changeMenu(item)"
                 [ngClass]="{selectedMenu: SelectedMenu === item.ID}">
                 <span [translate]="item.TranslatedName"></span>
             </a>

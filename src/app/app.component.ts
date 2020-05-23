@@ -50,6 +50,7 @@ export class AppComponent {
     this.showMenu = !this.showMenu;
   }
 
+  // CHANGE MENU
   changeMenu(menu) {
     localStorage.setItem("SelectedMenu", menu.ID);
     this.SelectedMenu = menu.ID

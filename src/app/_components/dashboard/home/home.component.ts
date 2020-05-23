@@ -20,9 +20,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.imagesSlide = [
-      '../assets/images/wallpaper1.jpg',
-      '../assets/images/wallpaper2.jpg',
-      '../assets/images/wallpaper3.jpg'
+      '../assets/images/wallpapers/wallpaper1.jpg',
+      '../assets/images/wallpapers/wallpaper2.jpg',
+      '../assets/images/wallpapers/wallpaper3.jpg',
+      '../assets/images/wallpapers/wallpaper4.jpg',
+      '../assets/images/wallpapers/wallpaper5.jpg'
     ];
   }
 }
