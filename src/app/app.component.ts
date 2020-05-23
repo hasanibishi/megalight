@@ -12,7 +12,7 @@ export class AppComponent {
   Year: number;
   showMenu = false;
 
-  SelectedMenu = 1;
+  SelectedMenu: number;
 
   MenuList: any[] = [{
     ID: 1,
@@ -37,19 +37,22 @@ export class AppComponent {
   }];
 
   constructor(private translate: TranslateService) {
-    // this language will be used as a fallback when a translation isn't found in the current language
     this.translate.setDefaultLang('al');
-
-    // the lang to use, if the lang isn't available, it will use the current loader to get them
     const language: string = localStorage.getItem('language');
     this.translate.use(language);
 
+    this.SelectedMenu = Number(localStorage.getItem("SelectedMenu"));
     this.Year = this.DatetimeNow.getFullYear();
   }
 
   // TOGGLE MENU
   toggleMenu() {
     this.showMenu = !this.showMenu;
+  }
+
+  changeMenu(menu) {
+    localStorage.setItem("SelectedMenu", menu.ID);
+    this.SelectedMenu = menu.ID
   }
 
   // CHANGE LANGUAGE
