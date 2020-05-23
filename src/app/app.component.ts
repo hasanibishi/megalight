@@ -12,8 +12,6 @@ export class AppComponent {
   Year: number;
   showMenu = false;
 
-  SelectedMenu: number;
-
   MenuList: any[] = [{
     ID: 1,
     Name: '/home',
@@ -41,19 +39,12 @@ export class AppComponent {
     const language: string = localStorage.getItem('language');
     this.translate.use(language);
 
-    this.SelectedMenu = Number(localStorage.getItem("SelectedMenu"));
     this.Year = this.DatetimeNow.getFullYear();
   }
 
   // TOGGLE MENU
   toggleMenu() {
     this.showMenu = !this.showMenu;
-  }
-
-  // CHANGE MENU
-  changeMenu(menu) {
-    localStorage.setItem("SelectedMenu", menu.ID);
-    this.SelectedMenu = menu.ID
   }
 
   // CHANGE LANGUAGE

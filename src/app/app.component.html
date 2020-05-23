@@ -21,8 +21,7 @@
         </div>
         <div></div>
         <div class="links">
-            <a *ngFor="let item of MenuList" [routerLink]="item.Name" (click)="changeMenu(item)"
-                [ngClass]="{selectedMenu: SelectedMenu === item.ID}">
+            <a *ngFor="let item of MenuList" [routerLink]="item.Name" routerLinkActive="selectedMenu">
                 <i [class]="item.Icon"></i>
                 <span class="ml-3" [translate]="item.TranslatedName"></span>
             </a>
