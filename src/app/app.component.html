@@ -15,7 +15,7 @@
     </div>
     <div class="navigation">
         <div class="logo">
-            <a [routerLink]="['/home']" (click)="SelectedMenu = 1">
+            <a [routerLink]="['/home']">
                 <img src="./assets/images/logo.jpg">
             </a>
         </div>
@@ -87,8 +87,7 @@
         </div>
 
         <div class="menu">
-            <a *ngFor="let item of MenuList" [routerLink]="item.Name" (click)="changeMenu(item)"
-                [ngClass]="{selectedMenu: SelectedMenu === item.ID}">
+            <a *ngFor="let item of MenuList" [routerLink]="item.Name">
                 <span [translate]="item.TranslatedName"></span>
             </a>
         </div>

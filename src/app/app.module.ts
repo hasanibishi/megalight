@@ -16,6 +16,7 @@ import { GalleryComponent } from './_components/dashboard/gallery/gallery.compon
 import { CatalogueComponent } from './_components/dashboard/catalogue/catalogue.component';
 import { ContactComponent } from './_components/dashboard/contact/contact.component';
 import { AgmCoreModule } from '@agm/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -36,6 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     SwiperModule,
+    BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBch_SUwBDehZUf0evVAYho33FoId369YE'
     }),

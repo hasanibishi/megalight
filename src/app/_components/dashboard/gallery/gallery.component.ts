@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: 'app-gallery',
@@ -7,21 +7,156 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryComponent implements OnInit {
 
-  imagesBasic = [
-    { img: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg", thumb: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg", description: "Image 1" },
-    { img: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg", thumb: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg", description: "Image 2" },
-    { img: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg", thumb: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg", description: "Image 3" },
-    { img: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(123).jpg", thumb: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(123).jpg", description: "Image 4" },
-    { img: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg", thumb: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg", description: 'Image 5' },
-    { img: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(128).jpg", thumb: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(128).jpg", description: 'Image 6' },
-    { img: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(132).jpg", thumb: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(132).jpg", description: 'Image 7' },
-    { img: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(115).jpg", thumb: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(115).jpg", description: 'Image 8' },
-    { img: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(133).jpg", thumb: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(133).jpg", description: 'Image 9' }
+  imagesList = [
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0108.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0110.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0111.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0112.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0113.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0115.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0116.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0117.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0118.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0120.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0121.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0122.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0123.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0130.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0134.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0135.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0142.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0144.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0145.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0146.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0149.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0152.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0153.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0159.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0161.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0163.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0164.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0165.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0166.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0167.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0180.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0186.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0192.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0193.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0195.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0198.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0199.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0201.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0203.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0204.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0205.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0207.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0212.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0230.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0233.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0234.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0235.jpg",
+    },
+    {
+      srcUrl: "./../assets/LusterImages/DSC_0238.jpg",
+    }
   ];
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() {
 
+  }
 }

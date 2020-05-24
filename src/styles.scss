@@ -226,6 +226,24 @@ footer {
   }
 }
 
+.Gallery-Container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  justify-content: center;
+  border: solid 1px $firstColor;
+  border-radius: 12px;
+  background: rgba($color: #83c15b, $alpha: 0.1);
+  padding: 50px;
+  margin: 50px 100px 100px;
+  grid-gap: 100px;
+
+  img {
+    height: 200px;
+    width: 100%;
+    border-radius: 12px;
+  }
+}
+
 // MEDIA QUERIES
 @media (min-width: 320px) and (max-width: 1023px) {
   .header-style {
@@ -327,7 +345,7 @@ footer {
     grid-gap: 0 !important;
   }
 
-  .Catalogue-Container {
+  .Catalogue-Container, .Gallery-Container {
     margin: 20px 10px;
     padding: 10px !important;
     grid-gap: 50px !important;
