@@ -40,6 +40,7 @@ export class AppComponent {
 
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('al');
+    localStorage.setItem('language', 'al');
     const language: string = localStorage.getItem('language');
     this.translate.use(language);
 
