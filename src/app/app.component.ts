@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -7,6 +7,10 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  showScroll: boolean;
+  showScrollHeight = 300;
+  hideScrollHeight = 10;
+
   // VARIABLES
   DatetimeNow: Date = new Date();
   Year: number;
@@ -51,5 +55,25 @@ export class AppComponent {
   changeLanguage(language: string) {
     localStorage.setItem('language', language);
     this.translate.use(language);
+  }
+  
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) > this.showScrollHeight) {
+      this.showScroll = true;
+    }
+    else if (this.showScroll && (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) < this.hideScrollHeight) {
+      this.showScroll = false;
+    }
+  }
+
+  scrollToTop() {
+    (function smoothscroll() {
+      var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      if (currentScroll > 0) {
+        window.requestAnimationFrame(smoothscroll);
+        window.scrollTo(0, currentScroll - (currentScroll / 5));
+      }
+    })();
   }
 }

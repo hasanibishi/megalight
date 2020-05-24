@@ -1,0 +1,29 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 15px;
+    border-radius: 50%;
+    right: 15px;
+    color: #83c15b;
+    border-color: #83c15b;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    z-index: 99998;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 10px #333;
+      transition: 0.3s;
+    }
+  }
+  
+  .show-scroll {
+    opacity: 1;
+  }
+  
+  button:focus {
+    outline: none !important;
+    box-shadow: none;
+  }

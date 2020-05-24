@@ -63,6 +63,10 @@
     </div>
 </div>
 
+<button [ngClass]="{'show-scroll': showScroll}" (click)="scrollToTop()" class="btn scroll-to-top">
+    <i class="fas fa-arrow-up fa-2x"></i>
+</button>
+
 <router-outlet></router-outlet>
 
 <!-- FOOTER -->
