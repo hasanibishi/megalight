@@ -91,7 +91,7 @@
         </div>
 
         <div class="menu">
-            <a *ngFor="let item of MenuList" [routerLink]="item.Name">
+            <a *ngFor="let item of MenuList" [routerLink]="item.Name" (click)="scrollToTop()">
                 <span [translate]="item.TranslatedName"></span>
             </a>
         </div>
