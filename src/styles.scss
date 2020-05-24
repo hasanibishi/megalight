@@ -198,6 +198,7 @@ footer {
   }
 }
 
+// CATALOGUE CONTAINER
 .Catalogue-Container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 282px);
@@ -227,6 +228,7 @@ footer {
   }
 }
 
+// GALLERY CONTAINER
 .Gallery-Container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 282px);
@@ -349,7 +351,7 @@ footer {
   .Catalogue-Container,
   .Gallery-Container {
     margin: 20px 10px;
-    padding: 10px !important;
+    padding: 50px !important;
     grid-gap: 50px !important;
   }
 }
