@@ -10,8 +10,7 @@ import { animate, style, transition, trigger, state } from "@angular/animations"
     trigger('slideInOut', [
       state('in', style({
         overflow: 'hidden',
-        height: '*',
-        width: '300px'
+        height: '*'
       })),
       state('out', style({
         opacity: '0',
