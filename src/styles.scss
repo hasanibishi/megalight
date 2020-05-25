@@ -1,5 +1,6 @@
 * {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
 }
 
 // COLORS
@@ -19,8 +20,14 @@ $firstColor: #83c15b;
       margin: 5px;
       cursor: pointer;
     }
+
     img {
       border-radius: 5px;
+    }
+
+    .selectedLang {
+      border: solid 2px $firstColor;
+      padding: 1px;
     }
   }
 
@@ -283,6 +290,10 @@ footer {
       }
       img {
         border-radius: 5px;
+      }
+      .selectedLang {
+        border: solid 2px $firstColor;
+        padding: 1px;
       }
     }
 

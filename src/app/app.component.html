@@ -4,13 +4,13 @@
 <div class="header-style">
     <div class="language">
         <span (click)="changeLanguage('al')">
-            <img src="./assets/images/al.png" alt="">
+            <img src="./assets/images/al.png" [ngClass]="{selectedLang: selectedLanguage === 'al'}">
         </span>
         <span (click)="changeLanguage('mk')">
-            <img src="./assets/images/mk.png" alt="">
+            <img src="./assets/images/mk.png" [ngClass]="{selectedLang: selectedLanguage === 'mk'}">
         </span>
         <span (click)="changeLanguage('en')">
-            <img src="./assets/images/en.png" alt="">
+            <img src="./assets/images/en.png" [ngClass]="{selectedLang: selectedLanguage === 'en'}">
         </span>
     </div>
     <div class="navigation">
@@ -34,13 +34,13 @@
 <div class="header-styleMobile">
     <div class="language">
         <span (click)="changeLanguage('al')">
-            <img src="./assets/images/al.png" alt="">
+            <img src="./assets/images/al.png" [ngClass]="{selectedLang: selectedLanguage === 'al'}">
         </span>
         <span (click)="changeLanguage('mk')">
-            <img src="./assets/images/mk.png" alt="">
+            <img src="./assets/images/mk.png" [ngClass]="{selectedLang: selectedLanguage === 'mk'}">
         </span>
         <span (click)="changeLanguage('en')">
-            <img src="./assets/images/en.png" alt="">
+            <img src="./assets/images/en.png" [ngClass]="{selectedLang: selectedLanguage === 'en'}">
         </span>
     </div>
     <div class="navigation">
@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <div class="links" *ngIf="showMenu">
+    <div class="links" [@slideInOut]="MenuOpened">
         <a *ngFor="let item of MenuList" [routerLink]="item.Name" (click)="showMenu = false">
             <i [class]="item.Icon"></i>
             <span class="ml-3" [translate]="item.TranslatedName"></span>
