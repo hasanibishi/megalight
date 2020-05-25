@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     })
   ],
   providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     LoaderService,
     {
       provide: HTTP_INTERCEPTORS,
