@@ -58,11 +58,9 @@ export class AppComponent {
   }];
 
   constructor(private translate: TranslateService) {
-    this.translate.setDefaultLang('al');
-    localStorage.setItem('language', 'al');
-    const language: string = localStorage.getItem('language');
-    this.translate.use(language);
-    this.selectedLanguage = language;
+    this.selectedLanguage = localStorage.getItem('language') !== null && localStorage.getItem('language') !== undefined ? localStorage.getItem('language') : 'al';
+    localStorage.setItem('language', this.selectedLanguage);
+    this.translate.use(this.selectedLanguage);
 
     this.Year = this.DatetimeNow.getFullYear();
   }

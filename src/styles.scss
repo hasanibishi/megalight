@@ -327,12 +327,12 @@ footer {
 
       a {
         display: grid;
-        grid-template-columns: 25px auto;
+        grid-template-columns: 25px auto 25px;
         align-items: center;
         justify-items: center;
         color: $firstColor !important;
         text-decoration: none;
-        font-size: 16px !important;
+        font-size: 18px !important;
 
         span {
           justify-self: start !important;
@@ -342,6 +342,10 @@ footer {
           width: 100%;
           grid-column: 1 / span 2;
         }
+      }
+      .selectedMenu {
+        font-weight: bold;
+        font-size: 19px !important;
       }
     }
   }

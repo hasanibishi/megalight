@@ -55,9 +55,10 @@
     </div>
 
     <div class="links" [@slideInOut]="MenuOpened">
-        <a *ngFor="let item of MenuList" [routerLink]="item.Name" (click)="MenuOpened = 'out'">
+        <a *ngFor="let item of MenuList" [routerLink]="item.Name" routerLinkActive="selectedMenu" (click)="MenuOpened = 'out'">
             <i [class]="item.Icon"></i>
             <span class="ml-3" [translate]="item.TranslatedName"></span>
+            <!-- <i class="far fa-check-circle mr-5 fa-2x" *ngIf="item.ID === selectedMenu"></i> -->
             <hr>
         </a>
     </div>
