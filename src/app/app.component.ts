@@ -1,6 +1,7 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { animate, style, transition, trigger, state } from "@angular/animations";
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -23,51 +24,54 @@ import { animate, style, transition, trigger, state } from "@angular/animations"
     ])
   ]
 })
-export class AppComponent {
-  
+export class AppComponent implements OnInit {
+
   // VARIABLES
   showScroll: boolean;
   showScrollHeight = 300;
   hideScrollHeight = 10;
 
-  DatetimeNow: Date = new Date();
-  Year: number;
+  year: number;
   selectedLanguage: string;
-  MenuOpened = 'out';
+  menuOpened = 'out';
 
-  MenuList: any[] = [{
-    ID: 1,
-    Name: '/home',
-    Icon: 'fa fa-home',
-    TranslatedName: 'Home'
+  menuList$ = of([{
+    id: 1,
+    root: '/home',
+    icon: 'fa fa-home',
+    name: 'Home'
   }, {
-    ID: 2,
-    Name: '/gallery',
-    Icon: 'far fa-images',
-    TranslatedName: 'Gallery'
+    id: 2,
+    root: '/gallery',
+    icon: 'far fa-images',
+    name: 'Gallery'
   }, {
-    ID: 3,
-    Name: '/catalogue',
-    Icon: 'fas fa-book',
-    TranslatedName: 'Catalogue'
+    id: 3,
+    root: '/catalogue',
+    icon: 'fas fa-book',
+    name: 'Catalogue'
   }, {
-    ID: 4,
-    Name: '/contact',
-    Icon: 'fa fa-phone',
-    TranslatedName: 'Contact'
-  }];
+    id: 4,
+    root: '/contact',
+    icon: 'fa fa-phone',
+    name: 'Contact'
+  }]);
 
   constructor(private translate: TranslateService) {
     this.selectedLanguage = localStorage.getItem('language') !== null && localStorage.getItem('language') !== undefined ? localStorage.getItem('language') : 'al';
     localStorage.setItem('language', this.selectedLanguage);
     this.translate.use(this.selectedLanguage);
 
-    this.Year = this.DatetimeNow.getFullYear();
+    this.year = new Date().getFullYear();
+  }
+
+  ngOnInit() {
+    document.getElementById('modal01').style.display = 'block'
   }
 
   // TOGGLE MENU
   toggleMenu() {
-    this.MenuOpened = this.MenuOpened === 'out' ? 'in' : 'out';;
+    this.menuOpened = this.menuOpened === 'out' ? 'in' : 'out';
   }
 
   // CHANGE LANGUAGE

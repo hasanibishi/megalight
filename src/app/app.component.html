@@ -21,9 +21,9 @@
         </div>
         <div></div>
         <div class="links">
-            <a *ngFor="let item of MenuList" [routerLink]="item.Name" routerLinkActive="selectedMenu">
-                <i [class]="item.Icon"></i>
-                <span class="ml-3" [translate]="item.TranslatedName"></span>
+            <a *ngFor="let item of menuList$ | async" [routerLink]="item.root" routerLinkActive="selectedMenu">
+                <i [class]="item.icon"></i>
+                <span class="ml-3" [translate]="item.name"></span>
             </a>
         </div>
     </div>
@@ -54,11 +54,11 @@
         </div>
     </div>
 
-    <div class="links" [@slideInOut]="MenuOpened">
-        <a *ngFor="let item of MenuList" [routerLink]="item.Name" routerLinkActive="selectedMenu" (click)="MenuOpened = 'out'">
-            <i [class]="item.Icon"></i>
-            <span class="ml-3" [translate]="item.TranslatedName"></span>
-            <!-- <i class="far fa-check-circle mr-5 fa-2x" *ngIf="item.ID === selectedMenu"></i> -->
+    <div class="links" [@slideInOut]="menuOpened">
+        <a *ngFor="let item of menuList$ | async" [routerLink]="item.root" routerLinkActive="selectedMenu"
+            (click)="menuOpened = 'out'">
+            <i [class]="item.icon"></i>
+            <span class="ml-3" [translate]="item.name"></span>
             <hr>
         </a>
     </div>
@@ -92,8 +92,8 @@
         </div>
 
         <div class="menu">
-            <a *ngFor="let item of MenuList" [routerLink]="item.Name" (click)="scrollToTop()">
-                <span [translate]="item.TranslatedName"></span>
+            <a *ngFor="let item of menuList$ | async" [routerLink]="item.root" (click)="scrollToTop()">
+                <span [translate]="item.name"></span>
             </a>
         </div>
 
@@ -116,6 +116,12 @@
     </div>
 
     <div class="text-center text-white">
-        <span>Copyright &copy; {{Year}} <b>Megalight</b>. All rights reserved.</span>
+        <span> <b>Megalight</b> 2015 - {{year}}. All rights reserved.</span>
     </div>
 </footer>
+
+<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+    <div class="w3-modal-content w3-animate-zoom">
+        <img class="locationImg" src="../assets/images/wallpapers/NewLocation.jpg">
+    </div>
+</div>

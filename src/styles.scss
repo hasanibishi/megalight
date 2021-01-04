@@ -235,7 +235,7 @@ footer {
     font-size: 20px;
 
     img {
-      width: 100%;
+      margin-top: 10px;
       transition: transform 0.5s;
 
       &:hover {
@@ -274,6 +274,10 @@ footer {
 @media (min-width: 320px) and (max-width: 1023px) {
   .header-style {
     display: none;
+  }
+
+  .locationImg {
+    width: 100%;
   }
 
   .header-styleMobile {
@@ -385,7 +389,16 @@ footer {
   }
 }
 
+.w3-modal {
+  padding-top: 50px !important;
+}
+
 @media (min-width: 1024px) {
+  .locationImg,
+  .w3-modal-content {
+    width: 300px !important;
+  }
+
   .header-styleMobile {
     display: none !important;
   }

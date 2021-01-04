@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-gallery',
@@ -7,7 +8,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class GalleryComponent implements OnInit {
 
-  imagesList = [
+  imagesList$ = of([
     {
       srcUrl: "./../assets/LusterImages/DSC_0108.jpg",
     },
@@ -152,7 +153,7 @@ export class GalleryComponent implements OnInit {
     {
       srcUrl: "./../assets/LusterImages/DSC_0238.jpg",
     }
-  ];
+  ]);
 
   constructor() { }
 

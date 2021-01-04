@@ -1,20 +1,8 @@
 <div class="Catalogue-Container">
-    <div class="catalog">
-        <span> Ozcan <span [translate]="'Catalogue'"></span></span>
-        <a href="http://www.ozcanaydinlatma.com.tr/katalog/2019-2020-8.html" target="_blank">
-            <img src="./../assets/images/ozcan.png">
-        </a>
-    </div>
-    <div class="catalog">
-        <span> Lucea Exclusive <span [translate]="'Catalogue'"></span></span>
-        <a href="./../assets/pdfCatalogues/LUCEA2020EXCLUSIVECATALOGUE.pdf" target="_blank">
-            <img src="./../assets/images/lucea.png">
-        </a>
-    </div>
-    <div class="catalog">
-        <span> Lucea Style <span [translate]="'Catalogue'"></span></span>
-        <a href="./../assets/pdfCatalogues/LUCEA2020STYLECATALOGUE.pdf" target="_blank">
-            <img src="./../assets/images/lucea.png">
+    <div class="catalog" *ngFor="let item of catalogs$ | async">
+        <span> {{item.name}} <span [translate]="'Catalogue'"></span></span>
+        <a href="{{item.link}}" target="_blank">
+            <img src="{{item.image}}" [style.width]="item.orientation === 'v' ? '150px' : '100%'">
         </a>
     </div>
 </div>
