@@ -13,21 +13,28 @@ $firstColor: #83c15b;
 // LAYOUT
 .header-style {
   .language {
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
     margin-right: 100px;
+    align-items: center;
 
-    span {
-      margin: 5px;
-      cursor: pointer;
+    i {
+      font-size: 20px;
     }
 
-    img {
-      border-radius: 5px;
-    }
+    select {
+      max-width: 130px !important;
+      border: none !important;
+      padding: 2px 2px 6px 5px !important;
 
-    .selectedLang {
-      border: solid 2px $firstColor;
-      padding: 1px;
+      &:focus {
+        box-shadow: none !important;
+        outline: none !important;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -169,7 +176,7 @@ footer {
       color: $firstColor;
     }
   }
-  .textAndVideo {
+  .content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     border: solid 1px $firstColor;
@@ -180,7 +187,7 @@ footer {
     grid-gap: 100px;
 
     span {
-      font-size: 20px;
+      font-size: 18px;
     }
 
     video {
@@ -191,6 +198,84 @@ footer {
 
       &:focus {
         outline: none;
+      }
+    }
+
+    .fb {
+      div:first-child {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        h3 {
+          color: #007bff;
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      img {
+        border-radius: 12px;
+        width: 100%;
+        transition: transform 0.5s;
+
+        &:hover {
+          transform: scale(1.04);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .catalog {
+      a:hover {
+        text-decoration: none;
+        color: #000;
+      }
+      h3 {
+        color: #000;
+      }
+      div:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      .images {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        gap: 15px;
+        img {
+          transition: 0.7s;
+          -webkit-transition: 0.7s;
+          -moz-transition: 0.7s;
+          -ms-transition: 0.7s;
+          -o-transition: 0.7s;
+          -webkit-transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
+          -moz-transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
+          -o-transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
+          -ms-transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
+          transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
+          width: 180px;
+        }
+
+        &:hover {
+          img {
+            transition: 0.7s;
+            -webkit-transition: 0.7s;
+            -moz-transition: 0.7s;
+            -ms-transition: 0.7s;
+            -o-transition: 0.7s;
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
+          }
+        }
       }
     }
   }
@@ -284,21 +369,30 @@ footer {
     margin: 0 !important;
 
     .language {
-      text-align: right;
+      display: flex;
+      justify-content: flex-end;
       margin: 0 !important;
       padding-right: 20px;
       padding-top: 10px;
+      align-items: center;
 
-      span {
-        margin: 5px;
-        cursor: pointer;
+      i {
+        font-size: 20px;
       }
-      img {
-        border-radius: 5px;
-      }
-      .selectedLang {
-        border: solid 2px $firstColor;
-        padding: 1px;
+
+      select {
+        max-width: 130px !important;
+        border: none !important;
+        padding: 2px 2px 6px 5px !important;
+
+        &:focus {
+          box-shadow: none !important;
+          outline: none !important;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
 
@@ -367,10 +461,19 @@ footer {
   }
 
   .Home-Container {
-    .textAndVideo {
+    .content {
       grid-template-columns: 1fr !important;
       margin: 20px 10px;
       padding: 10px !important;
+      justify-items: center;
+
+      .images {
+        margin-bottom: 20px;
+
+        img {
+          width: 120px !important;
+        }
+      }
     }
   }
 
@@ -405,5 +508,24 @@ footer {
 
   .navigation {
     margin-bottom: 20px;
+  }
+}
+
+@media (device-aspect-ratio: 40/71) {
+  .Home-Container {
+    .content {
+      grid-template-columns: 1fr !important;
+      margin: 20px 10px;
+      padding: 10px !important;
+      justify-items: center;
+
+      .images {
+        margin-bottom: 20px;
+
+        img {
+          width: 100px !important;
+        }
+      }
+    }
   }
 }

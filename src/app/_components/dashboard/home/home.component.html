@@ -8,12 +8,36 @@
 	</swiper>
 
 
-	<div class="textAndVideo">
+	<div class="content">
 		<div>
 			<span [innerHTML]="'HomeText' | translate"></span>
 		</div>
+
 		<video width="320" height="240" autobuffer playsinline controls>
 			<source src="./../assets/Videos/videoLusters.mp4" type="video/mp4">
 		</video>
+
+		<div class="fb">
+			<a href="https://www.facebook.com/megalights2" target="_blank">
+				<div>
+					<h3><b [translate]="'FollowUsOnFacebook'"></b></h3>
+					<img src="../../../../assets/images/fb_logo.png">
+				</div>
+				<img src="../../../../assets/images/fb.png">
+			</a>
+		</div>
+
+		<div class="catalog">
+			<a [routerLink]="'/catalogue'" (click)="scrollToTop()">
+				<div>
+					<h3><b [translate]="'Catalogue'"></b></h3>
+				</div>
+				<div class="images">
+					<img src="../../../../assets/images/page_1.jpg">
+					<img src="../../../../assets/images/page_2.jpg">
+				</div>
+			</a>
+		</div>
 	</div>
+
 </div>

@@ -32,8 +32,13 @@ export class AppComponent implements OnInit {
   hideScrollHeight = 10;
 
   year: number;
-  selectedLanguage: string;
   menuOpened = 'out';
+
+  languages = [
+    { id: 'al', value: 'Shqip', isActive: true },
+    { id: 'mk', value: 'Македонски', isActive: false },
+    { id: 'en', value: 'English', isActive: false }
+  ]
 
   menuList$ = of([{
     id: 1,
@@ -58,15 +63,15 @@ export class AppComponent implements OnInit {
   }]);
 
   constructor(private translate: TranslateService) {
-    this.selectedLanguage = localStorage.getItem('language') !== null && localStorage.getItem('language') !== undefined ? localStorage.getItem('language') : 'al';
-    localStorage.setItem('language', this.selectedLanguage);
-    this.translate.use(this.selectedLanguage);
 
-    this.year = new Date().getFullYear();
   }
 
   ngOnInit() {
-    document.getElementById('modal01').style.display = 'block'
+    this.languages = localStorage.getItem('language')?.length > 0 ? JSON.parse(localStorage.getItem('language')) : this.languages;
+    let langId = this.languages.find(x => x.isActive).id;
+
+    this.translate.use(langId);
+    this.year = new Date().getFullYear();
   }
 
   // TOGGLE MENU
@@ -76,9 +81,17 @@ export class AppComponent implements OnInit {
 
   // CHANGE LANGUAGE
   changeLanguage(language: string) {
-    this.selectedLanguage = language;
-    localStorage.setItem('language', language);
-    this.translate.use(language);
+    let lang = JSON.parse(language);
+
+    this.languages.forEach(x => {
+      if (x.id === lang.id)
+        x.isActive = true;
+      else
+        x.isActive = false;
+    })
+
+    localStorage.setItem('language', JSON.stringify(this.languages));
+    this.translate.use(lang.id);
   }
 
   @HostListener('window:scroll', [])

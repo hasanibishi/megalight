@@ -3,16 +3,13 @@
 <!-- NAVIGATION -->
 <div class="header-style">
     <div class="language">
-        <span (click)="changeLanguage('al')">
-            <img src="./assets/images/al.png" [ngClass]="{selectedLang: selectedLanguage === 'al'}">
-        </span>
-        <span (click)="changeLanguage('mk')">
-            <img src="./assets/images/mk.png" [ngClass]="{selectedLang: selectedLanguage === 'mk'}">
-        </span>
-        <span (click)="changeLanguage('en')">
-            <img src="./assets/images/en.png" [ngClass]="{selectedLang: selectedLanguage === 'en'}">
-        </span>
+        <i class="far fa-globe"></i>
+        <select class="form-control" (change)="changeLanguage($event.target.value)">
+            <option *ngFor="let item of languages" [selected]="item.isActive" [value]="item | json">{{item.value}}
+            </option>
+        </select>
     </div>
+
     <div class="navigation">
         <div class="logo">
             <a [routerLink]="['/home']">
@@ -33,15 +30,11 @@
 <!-- NAVIGATION MOBILE -->
 <div class="header-styleMobile">
     <div class="language">
-        <span (click)="changeLanguage('al')">
-            <img src="./assets/images/al.png" [ngClass]="{selectedLang: selectedLanguage === 'al'}">
-        </span>
-        <span (click)="changeLanguage('mk')">
-            <img src="./assets/images/mk.png" [ngClass]="{selectedLang: selectedLanguage === 'mk'}">
-        </span>
-        <span (click)="changeLanguage('en')">
-            <img src="./assets/images/en.png" [ngClass]="{selectedLang: selectedLanguage === 'en'}">
-        </span>
+        <i class="far fa-globe"></i>
+        <select class="form-control" (change)="changeLanguage($event.target.value)">
+            <option *ngFor="let item of languages" [selected]="item.isActive" [value]="item | json">{{item.value}}
+            </option>
+        </select>
     </div>
     <div class="navigation">
         <div class="logo">
@@ -120,8 +113,8 @@
     </div>
 </footer>
 
-<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+<!-- <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
     <div class="w3-modal-content w3-animate-zoom">
         <img class="locationImg" src="../assets/images/wallpapers/NewLocation.jpg">
     </div>
-</div>
+</div> -->
