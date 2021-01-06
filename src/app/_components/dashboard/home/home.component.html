@@ -7,7 +7,6 @@
 		</div>
 	</swiper>
 
-
 	<div class="content">
 		<div>
 			<span [innerHTML]="'HomeText' | translate"></span>
@@ -20,7 +19,7 @@
 		<div class="fb">
 			<a href="https://www.facebook.com/megalights2" target="_blank">
 				<div>
-					<h3><b [translate]="'FollowUsOnFacebook'"></b></h3>
+					<span [translate]="'FollowUsOnFacebook'"></span>
 					<img src="../../../../assets/images/fb_logo.png">
 				</div>
 				<img src="../../../../assets/images/fb.png">
@@ -30,7 +29,7 @@
 		<div class="catalog">
 			<a [routerLink]="'/catalogue'" (click)="scrollToTop()">
 				<div>
-					<h3><b [translate]="'Catalogue'"></b></h3>
+					<span [translate]="'Catalogue'"></span>
 				</div>
 				<div class="images">
 					<img src="../../../../assets/images/page_1.jpg">

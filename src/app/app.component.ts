@@ -67,17 +67,28 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.languages = localStorage.getItem('language')?.length > 0 ? JSON.parse(localStorage.getItem('language')) : this.languages;
+    let lStorage = localStorage.getItem('language');
+
+    if (!lStorage || lStorage === 'al' || lStorage === 'mk' || lStorage === 'en') {
+      localStorage.clear();
+      localStorage.setItem('language', JSON.stringify(this.languages));
+      location.reload();
+    }
+    else {
+      this.languages = JSON.parse(localStorage.getItem('language'));
+    }
+
     let langId = this.languages.find(x => x.isActive).id;
 
     this.translate.use(langId);
     this.year = new Date().getFullYear();
-    $("#myModal").modal('show');
+
+    // $("#myModal").modal('show');
   }
 
-  closeModal() {
-    $("#myModal").modal('hide');
-  }
+  // closeModal() {
+  //   $("#myModal").modal('hide');
+  // }
 
   // TOGGLE MENU
   toggleMenu() {
