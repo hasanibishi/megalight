@@ -3,8 +3,8 @@
 <!-- NAVIGATION -->
 <div class="header-style">
     <div class="language">
-        <img src="../assets/images/global.png">
-        <!-- <i class="fa fa-globe"></i> -->
+        <i class="fa fa-globe"></i>
+        <!-- <img src="../assets/images/global.png"> -->
         <select class="form-control" (change)="changeLanguage($event.target.value)">
             <option *ngFor="let item of languages" [selected]="item.isActive" [value]="item | json">{{item.value}}
             </option>
@@ -31,7 +31,8 @@
 <!-- NAVIGATION MOBILE -->
 <div class="header-styleMobile">
     <div class="language">
-        <i class="far fa-globe"></i>
+        <i class="fa fa-globe"></i>
+        <!-- <img src="../assets/images/global.png"> -->
         <select class="form-control" (change)="changeLanguage($event.target.value)">
             <option *ngFor="let item of languages" [selected]="item.isActive" [value]="item | json">{{item.value}}
             </option>

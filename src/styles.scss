@@ -25,7 +25,7 @@ $firstColor: #83c15b;
     select {
       max-width: 130px !important;
       border: none !important;
-      padding: 2px 2px 6px 5px !important;
+      padding: 0.3rem 0.3rem 0.5rem 0.3rem !important;
 
       &:focus {
         box-shadow: none !important;
@@ -226,7 +226,7 @@ footer {
         transition: transform 0.5s;
 
         &:hover {
-          transform: scale(1.04);
+          transform: scale(1.02);
           cursor: pointer;
         }
       }
@@ -390,7 +390,7 @@ footer {
       select {
         max-width: 130px !important;
         border: none !important;
-        padding: 2px 2px 6px 5px !important;
+        padding: 0.3rem 0.3rem 0.3rem 0.3rem !important;
 
         &:focus {
           box-shadow: none !important;
@@ -481,10 +481,24 @@ footer {
       }
 
       .images {
-        margin-bottom: 20px;
+        display: none !important;
+      }
 
+      .imagesMob {
+        display: block !important;
+        margin-bottom: 20px;
         img {
-          width: 120px !important;
+          transition: none !important;
+          -webkit-transition: none !important;
+          -moz-transition: none !important;
+          -ms-transition: none !important;
+          -o-transition: none !important;
+          -webkit-transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
+          -moz-transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
+          -o-transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
+          -ms-transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
+          transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
+          width: 120px;
         }
       }
     }
@@ -522,6 +536,10 @@ footer {
   .navigation {
     margin-bottom: 20px;
   }
+
+  .imagesMob {
+    display: none !important;
+  }
 }
 
 @media (device-aspect-ratio: 40/71) {
@@ -533,7 +551,11 @@ footer {
       justify-items: center;
 
       .images {
-        margin-bottom: 20px;
+        display: none !important;
+      }
+
+      .imagesMob {
+        display: block !important;
 
         img {
           width: 100px !important;
