@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { animate, style, transition, trigger, state } from "@angular/animations";
 import { of } from 'rxjs';
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -63,7 +64,6 @@ export class AppComponent implements OnInit {
   }]);
 
   constructor(private translate: TranslateService) {
-
   }
 
   ngOnInit() {
@@ -72,6 +72,11 @@ export class AppComponent implements OnInit {
 
     this.translate.use(langId);
     this.year = new Date().getFullYear();
+    $("#myModal").modal('show');
+  }
+
+  closeModal() {
+    $("#myModal").modal('hide');
   }
 
   // TOGGLE MENU
