@@ -1,5 +1,6 @@
 <div class="Home-Container">
-	<swiper class="swiper" [config]="swiperConfig">
+	<swiper class="swiper"
+			[config]="swiperConfig">
 		<div *ngFor="let slide of imagesSlide">
 			<div>
 				<img [src]="slide">
@@ -12,12 +13,18 @@
 			<span [innerHTML]="'HomeText' | translate"></span>
 		</div>
 
-		<video width="320" height="240" autobuffer playsinline controls>
-			<source src="./../assets/Videos/videoLusters.mp4" type="video/mp4">
+		<video width="320"
+			   height="240"
+			   autobuffer
+			   playsinline
+			   controls>
+			<source src="./../assets/Videos/videoLusters.mp4"
+					type="video/mp4">
 		</video>
 
 		<div class="fb">
-			<a href="https://www.facebook.com/megalights2" target="_blank">
+			<a href="https://www.facebook.com/megalights2"
+			   target="_blank">
 				<div>
 					<span [translate]="'FollowUsOnFacebook'"></span>
 					<img src="../../../../assets/images/fb_logo.png">
@@ -27,7 +34,8 @@
 		</div>
 
 		<div class="catalog">
-			<a [routerLink]="'/catalogue'" (click)="scrollToTop()">
+			<a [routerLink]="'/catalogue'"
+			   (click)="scrollToTop()">
 				<div>
 					<span [translate]="'Catalogue'"></span>
 				</div>

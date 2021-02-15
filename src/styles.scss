@@ -99,6 +99,8 @@ footer {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     height: 88%;
+    max-width: 1149px;
+    margin: auto;
 
     .openingHoursAndLinks {
       justify-self: center;
@@ -183,7 +185,8 @@ footer {
     border-radius: 12px;
     background: rgba($color: #83c15b, $alpha: 0.1);
     padding: 50px;
-    margin: 100px;
+    max-width: 1149px;
+    margin: 100px auto;
     grid-gap: 100px;
 
     span {
@@ -296,8 +299,9 @@ footer {
   border-radius: 12px;
   background: rgba($color: #83c15b, $alpha: 0.1);
   padding: 50px;
-  margin: 50px 100px 100px;
+  margin: 50px auto;
   grid-gap: 100px;
+  max-width: 1149px;
 
   .map {
     border: solid 1px #888;
@@ -318,8 +322,9 @@ footer {
   border-radius: 12px;
   background: rgba($color: #83c15b, $alpha: 0.1);
   padding: 50px;
-  margin: 50px 100px 100px;
+  margin: 50px auto;
   grid-gap: 100px;
+  max-width: 1149px;
 
   .catalog {
     text-align: center;
@@ -347,8 +352,9 @@ footer {
   border-radius: 12px;
   background: rgba($color: #83c15b, $alpha: 0.1);
   padding: 50px;
-  margin: 50px 100px 100px;
+  margin: 50px auto;
   grid-gap: 100px;
+  max-width: 1149px;
 
   img {
     height: 200px;
