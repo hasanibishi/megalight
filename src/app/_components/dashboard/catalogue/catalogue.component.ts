@@ -34,20 +34,14 @@ export class CatalogueComponent implements OnInit {
       orientation: 'v'
     },
     {
-      name: 'Ozcan',
-      link: 'http://www.ozcanaydinlatma.com.tr/katalog/2019-2020-8.html',
-      image: './../assets/images/ozcan.png',
-      orientation: 'h'
-    },
-    {
       name: 'Lucea Exclusive',
-      link: './../assets/pdfCatalogues/LUCEA2020EXCLUSIVECATALOGUE.pdf',
+      link: 'http://www.lucea.com.tr/grup-kategori/2/exclusive',
       image: './../assets/images/lucea.png',
       orientation: 'h'
     },
     {
       name: 'Lucea Style',
-      link: './../assets/pdfCatalogues/LUCEA2020STYLECATALOGUE.pdf',
+      link: 'http://www.lucea.com.tr/grup-kategori/4/style',
       image: './../assets/images/lucea.png',
       orientation: 'h'
     }]);
