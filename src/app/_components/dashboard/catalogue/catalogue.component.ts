@@ -35,13 +35,13 @@ export class CatalogueComponent implements OnInit {
     },
     {
       name: 'Lucea Exclusive',
-      link: 'http://www.lucea.com.tr/grup-kategori/2/exclusive',
+      link: 'http://www.lucea.com.tr/grup-kategori/2/exclusive/',
       image: './../assets/images/lucea.png',
       orientation: 'h'
     },
     {
       name: 'Lucea Style',
-      link: 'http://www.lucea.com.tr/grup-kategori/4/style',
+      link: 'http://www.lucea.com.tr/grup-kategori/4/style/',
       image: './../assets/images/lucea.png',
       orientation: 'h'
     }]);
