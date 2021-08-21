@@ -3,7 +3,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { animate, style, transition, trigger, state } from "@angular/animations";
 import { IMenu } from './_models/menu.model';
 import { ILanguage } from './_models/languale.model';
-declare var $: any;
 
 @Component({
   selector: 'app-root',
