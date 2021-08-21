@@ -1,7 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { animate, style, transition, trigger, state } from "@angular/animations";
-import { of } from 'rxjs';
+import { IMenu } from './_models/menu.model';
+import { ILanguage } from './_models/languale.model';
 declare var $: any;
 
 @Component({
@@ -29,47 +30,48 @@ export class AppComponent implements OnInit {
 
   // VARIABLES
   showScroll: boolean;
-  showScrollHeight = 300;
-  hideScrollHeight = 10;
+  showScrollHeight: number = 300;
+  hideScrollHeight: number = 10;
 
   year: number;
-  menuOpened = 'out';
+  menuOpened: string = 'out';
 
-  languages = [
+  languages: ILanguage[] = [
     { id: 'al', value: 'Shqip', isActive: true },
     { id: 'mk', value: 'Македонски', isActive: false },
     { id: 'en', value: 'English', isActive: false }
   ]
 
-  menuList$ = of([{
+  menuList: IMenu[] = [{
     id: 1,
-    root: '/home',
+    path: '/home',
     icon: 'fa fa-home',
     name: 'Home'
   }, {
     id: 2,
-    root: '/gallery',
+    path: '/gallery',
     icon: 'far fa-images',
     name: 'Gallery'
   }, {
     id: 3,
-    root: '/catalogue',
+    path: '/catalogue',
     icon: 'fas fa-book',
     name: 'Catalogue'
   }, {
     id: 4,
-    root: '/contact',
+    path: '/contact',
     icon: 'fa fa-phone',
     name: 'Contact'
-  }]);
+  }];
 
-  constructor(private translate: TranslateService) {
-  }
+  constructor(
+    private translate: TranslateService
+  ) { }
 
   ngOnInit() {
-    let lStorage = localStorage.getItem('language');
+    const language: string = localStorage.getItem('language');
 
-    if (!lStorage || lStorage === 'al' || lStorage === 'mk' || lStorage === 'en') {
+    if (!language || language === 'al' || language === 'mk' || language === 'en') {
       localStorage.clear();
       localStorage.setItem('language', JSON.stringify(this.languages));
       location.reload();
@@ -78,17 +80,11 @@ export class AppComponent implements OnInit {
       this.languages = JSON.parse(localStorage.getItem('language'));
     }
 
-    let langId = this.languages.find(x => x.isActive).id;
+    const langId: string = this.languages.find(x => x.isActive)?.id;
 
     this.translate.use(langId);
     this.year = new Date().getFullYear();
-
-    // $("#myModal").modal('show');
   }
-
-  // closeModal() {
-  //   $("#myModal").modal('hide');
-  // }
 
   // TOGGLE MENU
   toggleMenu() {
@@ -97,7 +93,7 @@ export class AppComponent implements OnInit {
 
   // CHANGE LANGUAGE
   changeLanguage(language: string) {
-    let lang = JSON.parse(language);
+    const lang: ILanguage = JSON.parse(language);
 
     this.languages.forEach(x => {
       if (x.id === lang.id)

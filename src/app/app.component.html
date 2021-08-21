@@ -4,9 +4,11 @@
 <div class="header-style">
     <div class="language">
         <i class="fa fa-globe"></i>
-        <!-- <img src="../assets/images/global.png"> -->
-        <select class="form-control" (change)="changeLanguage($event.target.value)">
-            <option *ngFor="let item of languages" [selected]="item.isActive" [value]="item | json">{{item.value}}
+        <select class="form-control"
+                (change)="changeLanguage($event.target.value)">
+            <option *ngFor="let item of languages"
+                    [selected]="item.isActive"
+                    [value]="item | json">{{item.value}}
             </option>
         </select>
     </div>
@@ -19,9 +21,12 @@
         </div>
         <div></div>
         <div class="links">
-            <a *ngFor="let item of menuList$ | async" [routerLink]="item.root" routerLinkActive="selectedMenu">
+            <a *ngFor="let item of menuList"
+               [routerLink]="item.path"
+               routerLinkActive="selectedMenu">
                 <i [class]="item.icon"></i>
-                <span class="ml-3" [translate]="item.name"></span>
+                <span class="ml-3"
+                      [translate]="item.name"></span>
             </a>
         </div>
     </div>
@@ -32,9 +37,11 @@
 <div class="header-styleMobile">
     <div class="language">
         <i class="fa fa-globe"></i>
-        <!-- <img src="../assets/images/global.png"> -->
-        <select class="form-control" (change)="changeLanguage($event.target.value)">
-            <option *ngFor="let item of languages" [selected]="item.isActive" [value]="item | json">{{item.value}}
+        <select class="form-control"
+                (change)="changeLanguage($event.target.value)">
+            <option *ngFor="let item of languages"
+                    [selected]="item.isActive"
+                    [value]="item | json">{{item.value}}
             </option>
         </select>
     </div>
@@ -44,34 +51,31 @@
                 <img src="./assets/images/logo.jpg">
             </a>
         </div>
-        <div class="hamburger" (click)="toggleMenu()">
+        <div class="hamburger"
+             (click)="toggleMenu()">
             <i class="fa fa-bars fa-2x"></i>
         </div>
     </div>
 
-    <div class="links" [@slideInOut]="menuOpened">
-        <a *ngFor="let item of menuList$ | async" [routerLink]="item.root" routerLinkActive="selectedMenu"
-            (click)="menuOpened = 'out'">
+    <div class="links"
+         [@slideInOut]="menuOpened">
+        <a *ngFor="let item of menuList"
+           [routerLink]="item.path"
+           routerLinkActive="selectedMenu"
+           (click)="menuOpened = 'out'">
             <i [class]="item.icon"></i>
-            <span class="ml-3" [translate]="item.name"></span>
+            <span class="ml-3"
+                  [translate]="item.name"></span>
             <hr>
         </a>
     </div>
 </div>
 
-<button [ngClass]="{'show-scroll': showScroll}" (click)="scrollToTop()" class="btn scroll-to-top">
+<button [ngClass]="{'show-scroll': showScroll}"
+        (click)="scrollToTop()"
+        class="btn scroll-to-top">
     <i class="fas fa-arrow-up fa-2x"></i>
 </button>
-
-<!-- <div id="myModal" class="modal fade" role="dialog" (click)="closeModal()">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="../assets/images/wallpapers/NewLocation.jpg" width="100%">
-            </div>
-        </div>
-    </div>
-</div> -->
 
 <router-outlet></router-outlet>
 
@@ -84,20 +88,25 @@
                 <span [translate]="'FromMonToSat'"></span>
             </div>
             <div class="links pl-5 pr-5 pt-4">
-                <a class="fb" href="https://www.facebook.com/megalights2" target="_blank">
+                <a href="https://www.facebook.com/megalight2015"
+                   target="_blank">
                     <i class="fab fa-facebook-f fa-2x"></i>
                 </a>
-                <a class="in" href="https://www.instagram.com/megalights1" target="_blank">
+                <a href="https://www.instagram.com/megalights1"
+                   target="_blank">
                     <i class="fab fa-instagram fa-2x"></i>
                 </a>
-                <a class="youtube" href="https://www.youtube.com/watch?v=0NuYMJIYttU" target="_blank">
+                <a href="https://www.youtube.com/watch?v=0NuYMJIYttU"
+                   target="_blank">
                     <i class="fab fa-youtube fa-2x"></i>
                 </a>
             </div>
         </div>
 
         <div class="menu">
-            <a *ngFor="let item of menuList$ | async" [routerLink]="item.root" (click)="scrollToTop()">
+            <a *ngFor="let item of menuList"
+               [routerLink]="item.path"
+               (click)="scrollToTop()">
                 <span [translate]="item.name"></span>
             </a>
         </div>

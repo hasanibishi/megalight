@@ -8,19 +8,19 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-  // VARIABLES
   showScroll: boolean;
-  showScrollHeight = 300;
-  hideScrollHeight = 10;
+  showScrollHeight: number = 300;
+  hideScrollHeight: number = 10;
 
-  public imagesSlide = [];
+  imagesSlide: string[] = [];
 
   swiperConfig: SwiperConfigInterface = {
     slidesPerView: 1,
     autoplay: true,
     navigation: true
   };
+
+  constructor() { }
 
   ngOnInit() {
     this.imagesSlide = [
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
 
   scrollToTop() {
     (function smoothscroll() {
-      var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
       if (currentScroll > 0) {
         window.requestAnimationFrame(smoothscroll);
         window.scrollTo(0, currentScroll - (currentScroll / 5));

@@ -1,8 +1,11 @@
 <div class="Catalogue-Container">
-    <div class="catalog" *ngFor="let item of catalogs$ | async">
+    <div class="catalog"
+         *ngFor="let item of catalogs">
         <span> {{item.name}} <span [translate]="'Catalogue'"></span></span>
-        <a href="{{item.link}}" target="_blank">
-            <img src="{{item.image}}" [style.width]="item.orientation === 'v' ? '150px' : '100%'">
+        <a [href]="item.link"
+           target="_blank">
+            <img [src]="item.image"
+                 [style.width]="item.orientation === 'v' ? '150px' : '100%'">
         </a>
     </div>
 </div>

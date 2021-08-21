@@ -1,4 +1,4 @@
 <div class="Gallery-Container">
-    <img *ngFor="let item of imagesList$ | async"
-         [src]="item.srcUrl">
+    <img *ngFor="let img of imagesUrl"
+         [src]="img">
 </div>

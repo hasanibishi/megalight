@@ -119,20 +119,23 @@ footer {
         align-items: end;
 
         a {
+          display: flex;
+          align-items: center;
+          text-align: center;
+          height: 50px;
+          width: 50px;
           background: rgba($color: #000, $alpha: 0.5);
           border-radius: 50px;
           color: #fff;
-        }
-        .fb {
-          padding: 10px 18px;
-        }
 
-        .in {
-          padding: 10px 14px;
-        }
+          i {
+            width: 100%;
+          }
 
-        .youtube {
-          padding: 10px;
+          &:hover {
+            background: rgba($color: #333, $alpha: 0.5);
+            text-decoration: none !important;
+          }
         }
       }
     }
@@ -195,9 +198,8 @@ footer {
 
     video {
       width: 100%;
-      height: 300px;
-      border-radius: 12px;
-      border: solid 1px #888;
+      border: 9px inset #ddd;
+      padding: 6px;
 
       &:focus {
         outline: none;
