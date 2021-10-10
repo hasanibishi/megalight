@@ -9,27 +9,29 @@ import { ICatalogue } from 'src/app/_models/catalogue.model';
 })
 export class CatalogueComponent implements OnInit {
 
+  ORIENTATION = Orientation;
+
   catalogs: ICatalogue[] = [
     {
-      name: 'TRIO 2021',
+      name: 'TRIO 2022',
       link: 'https://www.trio-lighting.com/de/catalogues/?fbclid=IwAR3GogXIUxHqYV5Sj7caPb-Qbn7nTcn4XzmzcHmiQ4LFqpbh8rxhgsQPyK0#TRIO',
       image: './../assets/images/page_1.jpg',
       orientation: Orientation.vertical
     },
     {
-      name: 'RL 2021',
+      name: 'RL 2022',
       link: 'https://www.trio-lighting.com/de/catalogues/?fbclid=IwAR3GogXIUxHqYV5Sj7caPb-Qbn7nTcn4XzmzcHmiQ4LFqpbh8rxhgsQPyK0#RL',
       image: './../assets/images/page_2.jpg',
       orientation: Orientation.vertical
     },
     {
-      name: 'OUTDOOR 2020',
+      name: 'OUTDOOR 2021',
       link: 'https://www.trio-lighting.com/de/catalogues/?fbclid=IwAR3GogXIUxHqYV5Sj7caPb-Qbn7nTcn4XzmzcHmiQ4LFqpbh8rxhgsQPyK0#OUTDOOR',
       image: './../assets/images/page_3.jpg',
       orientation: Orientation.vertical
     },
     {
-      name: 'NEWS 2020',
+      name: 'NEWS 2021',
       link: 'https://www.trio-lighting.com/de/catalogues/?fbclid=IwAR3GogXIUxHqYV5Sj7caPb-Qbn7nTcn4XzmzcHmiQ4LFqpbh8rxhgsQPyK0#NEWS',
       image: './../assets/images/page_4.jpg',
       orientation: Orientation.vertical
