@@ -12,6 +12,12 @@ $firstColor: #83c15b;
 
 // LAYOUT
 .header-style {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 9999;
+  border-bottom: 1px solid #eee;
+
   .language {
     display: flex;
     justify-content: flex-end;
@@ -390,7 +396,11 @@ footer {
   }
 
   .header-styleMobile {
-    margin: 0 !important;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 9999;
+    border-bottom: 1px solid #eee;
 
     .language {
       display: flex;

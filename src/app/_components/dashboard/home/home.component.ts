@@ -1,5 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { Helper } from 'src/app/_services/helper';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,6 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  showScroll: boolean;
-  showScrollHeight: number = 300;
-  hideScrollHeight: number = 10;
-
   imagesSlide: string[] = [];
 
   swiperConfig: SwiperConfigInterface = {
@@ -32,23 +28,7 @@ export class HomeComponent implements OnInit {
     ];
   }
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) > this.showScrollHeight) {
-      this.showScroll = true;
-    }
-    else if (this.showScroll && (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) < this.hideScrollHeight) {
-      this.showScroll = false;
-    }
-  }
-
   scrollToTop() {
-    (function smoothscroll() {
-      let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      if (currentScroll > 0) {
-        window.requestAnimationFrame(smoothscroll);
-        window.scrollTo(0, currentScroll - (currentScroll / 5));
-      }
-    })();
+    Helper.scrollToTop();
   }
 }

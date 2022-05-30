@@ -3,6 +3,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { animate, style, transition, trigger, state } from "@angular/animations";
 import { IMenu } from './_models/menu.model';
 import { ILanguage } from './_models/languale.model';
+import { Helper } from './_services/helper';
+import { Language } from './_enums/language.enum';
 
 @Component({
   selector: 'app-root',
@@ -36,9 +38,9 @@ export class AppComponent implements OnInit {
   menuOpened: string = 'out';
 
   languages: ILanguage[] = [
-    { id: 'al', value: 'Shqip', isActive: true },
-    { id: 'mk', value: 'Македонски', isActive: false },
-    { id: 'en', value: 'English', isActive: false }
+    { id: Language.AL, value: 'Shqip', isActive: true },
+    { id: Language.MK, value: 'Македонски', isActive: false },
+    { id: Language.EN, value: 'English', isActive: false }
   ]
 
   menuList: IMenu[] = [{
@@ -68,9 +70,14 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const language: string = localStorage.getItem('language');
+    const language = localStorage.getItem('language');
 
-    if (!language || language === 'al' || language === 'mk' || language === 'en') {
+    if (
+      !language ||
+      language === Language.AL ||
+      language === Language.MK ||
+      language === Language.EN
+    ) {
       localStorage.clear();
       localStorage.setItem('language', JSON.stringify(this.languages));
       location.reload();
@@ -79,7 +86,7 @@ export class AppComponent implements OnInit {
       this.languages = JSON.parse(localStorage.getItem('language'));
     }
 
-    const langId: string = this.languages.find(x => x.isActive)?.id;
+    const langId = this.languages.find(x => x.isActive)?.id;
 
     this.translate.use(langId);
     this.year = new Date().getFullYear();
@@ -102,6 +109,7 @@ export class AppComponent implements OnInit {
     })
 
     localStorage.setItem('language', JSON.stringify(this.languages));
+
     this.translate.use(lang.id);
   }
 
@@ -116,12 +124,6 @@ export class AppComponent implements OnInit {
   }
 
   scrollToTop() {
-    (function smoothscroll() {
-      var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      if (currentScroll > 0) {
-        window.requestAnimationFrame(smoothscroll);
-        window.scrollTo(0, currentScroll - (currentScroll / 5));
-      }
-    })();
+    Helper.scrollToTop();
   }
 }

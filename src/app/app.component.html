@@ -23,14 +23,14 @@
         <div class="links">
             <a *ngFor="let item of menuList"
                [routerLink]="item.path"
-               routerLinkActive="selectedMenu">
+               routerLinkActive="selectedMenu"
+               (click)="scrollToTop()">
                 <i [class]="item.icon"></i>
                 <span class="ml-3"
                       [translate]="item.name"></span>
             </a>
         </div>
     </div>
-    <hr>
 </div>
 
 <!-- NAVIGATION MOBILE -->
@@ -62,7 +62,7 @@
         <a *ngFor="let item of menuList"
            [routerLink]="item.path"
            routerLinkActive="selectedMenu"
-           (click)="menuOpened = 'out'">
+           (click)="menuOpened = 'out'; scrollToTop()">
             <i [class]="item.icon"></i>
             <span class="ml-3"
                   [translate]="item.name"></span>
